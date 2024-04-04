@@ -1,0 +1,59 @@
+body {
+  background-color: #10043c !important;
+}
+.wave-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.pie-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  justify-content: center;
+}
+.pie-box {
+  display: flex;
+  width: 350px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.tab-content > * {
+  color: aliceblue !important;
+}
+@media screen and (min-width: 1400px) {
+  .pie-container {
+    width: 350px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .pie-container {
+    width: 250px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .pie-container {
+    width: 150px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.mybiorythm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.userline,
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infos {
+  align-items: flex-start;
+}
