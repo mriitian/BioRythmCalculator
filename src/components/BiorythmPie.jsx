@@ -17,7 +17,7 @@ export default function BiorythmPie({ currentUser }) {
     const today = new Date(
       `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
     );
-    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24) - 1);
+    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24) + 1);
 
     const physical = Math.sin((2 * Math.PI * diffDays) / 23);
 
