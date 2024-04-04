@@ -10,7 +10,7 @@ export default function Tabhead() {
   const [currentUser, setCurrentUser] = useState(null);
   return (
     <Tabs
-      defaultActiveKey="profile"
+      defaultActiveKey="home"
       id="fill-tab-example"
       transition={true}
       className="mb-3"
