@@ -14,11 +14,11 @@ export default function BiorythmPie({ currentUser }) {
   // Calculate biorythm values for the current date
   const calculateBiorythm = (date) => {
     const birthDate = new Date(currentUser.birthdate);
-    const today = new Date(
-      `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    const today = new Date();
+    
+    const diffDays = Math.floor(
+      (today - birthDate) / (1000 * 60 * 60 * 24) + 1
     );
-    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24) + 1);
-
     const physical = Math.sin((2 * Math.PI * diffDays) / 23);
 
     const emotional = Math.sin((2 * Math.PI * diffDays) / 28);
