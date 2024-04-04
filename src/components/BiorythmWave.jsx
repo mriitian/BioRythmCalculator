@@ -13,11 +13,13 @@ export default function BiorythmWave({ currentUser }) {
   const calculateBiorythm = (days, birthdate) => {
     const birthDate = new Date(birthdate);
     const today = new Date();
-    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor(
+      (today - birthDate) / (1000 * 60 * 60 * 24) + 1
+    );
 
-    const physical = -Math.sin((2 * Math.PI * (days - diffDays)) / 23);
-    const emotional = -Math.sin((2 * Math.PI * (days - diffDays)) / 28);
-    const intellectual = -Math.sin((2 * Math.PI * (days - diffDays)) / 33);
+    const physical = Math.sin((2 * Math.PI * (days + diffDays)) / 23);
+    const emotional = Math.sin((2 * Math.PI * (days + diffDays)) / 28);
+    const intellectual = Math.sin((2 * Math.PI * (days + diffDays)) / 33);
 
     return { physical, emotional, intellectual };
   };
