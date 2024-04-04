@@ -12,7 +12,7 @@ export default function BiorythmBar({ date, currentUser }) {
   const calculateBiorythm = (birthdate, currentDate) => {
     const birthDate = new Date(birthdate);
     const today = new Date(currentDate);
-    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24) + 1);
 
     const physical = Math.sin((2 * Math.PI * diffDays) / 23);
     const emotional = Math.sin((2 * Math.PI * diffDays) / 28);
