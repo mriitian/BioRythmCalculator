@@ -49,11 +49,16 @@ body {
   gap: 20px;
 }
 .userline,
-.info {
+.info,
+.dailyinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .infos {
+  align-items: flex-start;
+}
+.dailyinfo {
+  padding: 2vw;
   align-items: flex-start;
 }
