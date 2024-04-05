@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import ReactDatePicker from "react-datepicker";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import DailyInfo from "../components/DailyInfo";
 
 export default function DailyInt({ currentUser }) {
   const today = new Date();
@@ -47,6 +48,7 @@ export default function DailyInt({ currentUser }) {
         </Modal.Footer>
       </Modal>
       <BiorythmBar date={date} currentUser={currentUser} />
+      <DailyInfo />
     </div>
   );
 }
