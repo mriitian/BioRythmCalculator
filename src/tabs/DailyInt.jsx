@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import DailyInfo from "../components/DailyInfo";
 
-export default function DailyInt({ currentUser, biorData }) {
+export default function DailyInt({ currentUser }) {
   const today = new Date();
   const [date, setDate] = useState(
     `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
@@ -50,7 +50,7 @@ export default function DailyInt({ currentUser, biorData }) {
       <BiorythmBar
         date={date}
         currentUser={currentUser}
-        biorData={biorData}
+        
         setValues={setValues}
       />
       <DailyInfo values={values} />
