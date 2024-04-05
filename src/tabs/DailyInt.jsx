@@ -6,13 +6,13 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import DailyInfo from "../components/DailyInfo";
 
-export default function DailyInt({ currentUser }) {
+export default function DailyInt({ currentUser, biorData }) {
   const today = new Date();
   const [date, setDate] = useState(
     `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
   );
   const [show, setShow] = useState(false);
-
+  const [values, setValues] = useState();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleChangeDate = (event) => {
@@ -47,8 +47,13 @@ export default function DailyInt({ currentUser }) {
           </Button>
         </Modal.Footer>
       </Modal>
-      <BiorythmBar date={date} currentUser={currentUser} />
-      <DailyInfo />
+      <BiorythmBar
+        date={date}
+        currentUser={currentUser}
+        biorData={biorData}
+        setValues={setValues}
+      />
+      <DailyInfo values={values} />
     </div>
   );
 }
