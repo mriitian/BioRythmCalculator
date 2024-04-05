@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-export default function BiorythmBar({ date, currentUser }) {
+export default function BiorythmBar({ date, currentUser, setValues }) {
   if (!currentUser) {
     // If currentUser is not defined, return a message or placeholder
     return <div>No user selected</div>;
@@ -18,6 +18,7 @@ export default function BiorythmBar({ date, currentUser }) {
     const emotional = Math.sin((2 * Math.PI * diffDays) / 28);
     const intellectual = Math.sin((2 * Math.PI * diffDays) / 33);
     const average = (physical + emotional + intellectual) / 3;
+    setValues({ physical, emotional, intellectual, average });
     return { physical, emotional, intellectual, average };
   };
 
