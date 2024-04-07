@@ -14,7 +14,7 @@ export default function BiorythmWave({ currentUser }) {
     const birthDate = new Date(birthdate);
     const today = new Date();
     const diffDays = Math.floor(
-      (today - birthDate) / (1000 * 60 * 60 * 24) + 1
+      (today - birthDate) / (1000 * 60 * 60 * 24)
     );
 
     const physical = Math.sin((2 * Math.PI * (days + diffDays)) / 23);
