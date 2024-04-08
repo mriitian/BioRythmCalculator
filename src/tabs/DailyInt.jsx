@@ -17,7 +17,7 @@ export default function DailyInt({ currentUser }) {
   const handleShow = () => setShow(true);
   const handleChangeDate = (event) => {
   const selectedDate = new Date(event.target.value);
-  selectedDate.setDate(selectedDate.getDate() - 1); // Subtract one day from the selected date
+  selectedDate.setDate(selectedDate.getDate()); // Subtract one day from the selected date
   const formattedDate = `${selectedDate.getFullYear()}-${selectedDate.getMonth() + 1}-${selectedDate.getDate()}`;
   setDate(formattedDate);
 };
