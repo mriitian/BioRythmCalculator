@@ -9,7 +9,7 @@ import DailyInfo from "../components/DailyInfo";
 export default function DailyInt({ currentUser }) {
   const today = new Date();
   const [date, setDate] = useState(
-    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 1}`
   );
   const [show, setShow] = useState(false);
   const [values, setValues] = useState();
