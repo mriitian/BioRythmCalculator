@@ -9,16 +9,18 @@ import DailyInfo from "../components/DailyInfo";
 export default function DailyInt({ currentUser }) {
   const today = new Date();
   const [date, setDate] = useState(
-    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 1}`
+    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
   );
   const [show, setShow] = useState(false);
   const [values, setValues] = useState();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleChangeDate = (event) => {
-    setDate(event.target.value);
-    console.log(event.target.value);
-  };
+  const selectedDate = new Date(event.target.value);
+  selectedDate.setDate(selectedDate.getDate() - 1); // Subtract one day from the selected date
+  const formattedDate = `${selectedDate.getFullYear()}-${selectedDate.getMonth() + 1}-${selectedDate.getDate()}`;
+  setDate(formattedDate);
+};
   return (
     <div
       style={{
